@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://www.knime.org/2008/09/XMLConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.knime.org/2008/09/XMLConfig http://www.knime.org/XMLConfig_2008_09.xsd" key="settings.xml">
+<entry key="node_file" type="xstring" value="settings.xml"/>
+<config key="flow_stack"/>
+<config key="internal_node_subsettings">
+<entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
+</config>
+<config key="model">
+<entry key="scriptImports" type="xstring" value="// Your custom imports:%%00010"/>
+<entry key="scriptFields" type="xstring" value="// Your custom variables:%%00010"/>
+<entry key="scriptBody" type="xstring" value="// Enter your code here:%%00010%%00010String temp = c_combinedstring.replaceAll(&quot;&lt;[^&gt;]*&gt;&quot;, &quot;&quot;);%%00010String temp1 = temp.replaceAll(&quot;&amp;nbsp&quot;, &quot;&quot;);%%00010String temp2 = temp1.replaceAll(&quot;\&quot;,\&quot;&quot;, &quot;&quot;);%%00010String temp21 = temp2.replaceAll(&quot;&amp;amp&quot;, &quot;&quot;);%%00010String temp3 = temp21.replaceAll(&quot;;&quot;, &quot;&quot;);%%00010String finalstr = &quot;&quot;; int temp4 = temp3.indexOf(&quot;DECISION&quot;); int temp5 = temp3.indexOf(&quot;Item&quot;, temp4);%%00010for(int i=0; i&lt;5; i++){%%00010%%00009String temp6 = &quot;&quot;;%%00010%%00009if(temp4 &gt;= 0 &amp;&amp; temp5 &gt;= 0){%%00010%%00009%%00009temp6 = temp3.substring(temp4, temp5);%%00010%%00009%%00009temp4 = temp3.indexOf(&quot;DECISION&quot;, temp5);%%00009temp5 = temp3.indexOf(&quot;Item&quot;, temp4);%%00010%%00009%%00009finalstr = finalstr + &quot; &quot; + temp6;%%00010%%00009} else {%%00010%%00009%%00009break;%%00010%%00009}%%00010}%%00010try{%%00010java.io.PrintWriter writer = new java.io.PrintWriter(v_Location+&quot;.txt&quot;, &quot;UTF-8&quot;);%%00010writer.write(finalstr);%%00010writer.close();%%00010}catch(Exception e) {}%%00010out_combinedstring =  finalstr;%%00010%%00010"/>
+<config key="jarFiles">
+<entry key="array-size" type="xint" value="0"/>
+</config>
+<config key="outCols">
+<entry key="array-size" type="xint" value="1"/>
+<config key="0">
+<entry key="Name" type="xstring" value="combinedstring"/>
+<entry key="JavaName" type="xstring" value="out_combinedstring"/>
+<entry key="JavaType" type="xstring" value="java.lang.String"/>
+<config key="Type">
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<entry key="is_null" type="xboolean" value="false"/>
+</config>
+<entry key="replaceExisting" type="xboolean" value="true"/>
+</config>
+</config>
+<config key="outVars">
+<entry key="array-size" type="xint" value="0"/>
+</config>
+<config key="inCols">
+<entry key="array-size" type="xint" value="1"/>
+<config key="0">
+<entry key="Name" type="xstring" value="combinedstring"/>
+<entry key="JavaName" type="xstring" value="c_combinedstring"/>
+<entry key="JavaType" type="xstring" value="java.lang.String"/>
+<config key="Type">
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<entry key="is_null" type="xboolean" value="false"/>
+</config>
+</config>
+</config>
+<config key="inVars">
+<entry key="array-size" type="xint" value="1"/>
+<config key="0">
+<entry key="Name" type="xstring" value="Location"/>
+<entry key="JavaName" type="xstring" value="v_Location"/>
+<entry key="JavaType" type="xstring" value="java.lang.String"/>
+<entry key="Type" type="xstring" value="STRING"/>
+</config>
+</config>
+<entry key="version" type="xstring" value="version 1.x"/>
+<entry key="templateUUID" type="xstring" isnull="true" value=""/>
+<entry key="runOnExecute" type="xboolean" value="false"/>
+</config>
+<entry key="customDescription" type="xstring" isnull="true" value=""/>
+<entry key="state" type="xstring" value="EXECUTED"/>
+<entry key="factory" type="xstring" value="org.knime.base.node.jsnippet.JavaSnippetNodeFactory"/>
+<entry key="node-name" type="xstring" value="Java Snippet"/>
+<entry key="node-bundle-name" type="xstring" value="KNIME Java Snippet Nodes"/>
+<entry key="node-bundle-symbolic-name" type="xstring" value="org.knime.jsnippets"/>
+<entry key="node-bundle-vendor" type="xstring" value="KNIME GmbH, Konstanz, Germany"/>
+<entry key="node-bundle-version" type="xstring" value="3.1.0.v201512012046"/>
+<entry key="node-feature-name" type="xstring" isnull="true" value=""/>
+<entry key="node-feature-symbolic-name" type="xstring" isnull="true" value=""/>
+<entry key="node-feature-vendor" type="xstring" isnull="true" value=""/>
+<entry key="node-feature-version" type="xstring" value="0.0.0"/>
+<config key="factory_settings"/>
+<entry key="name" type="xstring" value="Java Snippet"/>
+<entry key="hasContent" type="xboolean" value="true"/>
+<entry key="isInactive" type="xboolean" value="false"/>
+<config key="ports">
+<config key="port_1">
+<entry key="index" type="xint" value="1"/>
+<entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
+<entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
+<entry key="port_object_summary" type="xstring" value="Rows: 1, Cols: 1"/>
+<entry key="port_dir_location" type="xstring" value="port_1"/>
+</config>
+</config>
+<config key="filestores">
+<entry key="file_store_location" type="xstring" isnull="true" value=""/>
+<entry key="file_store_id" type="xstring" isnull="true" value=""/>
+</config>
+</config>
